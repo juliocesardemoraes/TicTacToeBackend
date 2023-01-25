@@ -20,13 +20,11 @@ io.on("connection", (socket) => {
 
   socket.on("mark_checked", (data) => {
     data.player = 1;
-    console.log(data);
     socket.broadcast.emit("chosen_mark", data);
     //socket.to(data.room).emit("receive_message", data);
   });
 
   socket.on("next_turn_chosen", (data) => {
-    console.log(data);
     socket.broadcast.emit("next_turn", data);
   });
 });
